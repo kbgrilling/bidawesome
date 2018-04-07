@@ -10,17 +10,21 @@ import Foundation
 class Book {
 	let title: String
 	let authors: Array<String>
-	let bid: Double
+	let bidPrice: Double
 	let image: String
-	let ide: String
+	let language: String
+	let editor: String
+	let description: String
 	let id: String?
 	
-	init(title: String, authors: [String], bid: Double, image: String, ide: String, id: String?) {
+	init(title: String, authors: [String], bidPrice: Double, image: String, language: String, editor: String, description: String, id: String?) {
 		self.title = title
 		self.authors = authors
-		self.bid = bid
+		self.bidPrice = bidPrice
 		self.image = image
-		self.ide = ide
+		self.language = language
+		self.editor = editor
+		self.description = description
 		self.id = id ?? nil
 	}
 	
