@@ -15,6 +15,10 @@ final class DatabaseManager {
     Firestore.firestore()
   }()
   
+  private lazy var storage = {
+    Storage.storage()
+  }()
+  
   private lazy var bookCollection: CollectionReference = {
     db.collection("items")
   }()
@@ -35,6 +39,7 @@ final class DatabaseManager {
       "bidPrice": book.bidPrice,
       "description": book.description,
       "editor": book.editor,
+      "image": book.image,
       "language": book.language,
       "platform": book.platform,
       "title": book.title
@@ -52,7 +57,7 @@ final class DatabaseManager {
           authors: bookData["authors"] as! [String],
           bidPrice: bookData["bidPrice"] as! Double,
           platform: bookData["platform"] as! String,
-          image: "",
+          image: bookData["image"] as! String,
           language: bookData["language"] as! String,
           editor: bookData["editor"] as! String,
           description: bookData["description"] as! String,
@@ -60,6 +65,17 @@ final class DatabaseManager {
         books.append(book)
       }
       completionHandler(books)
+    }
+  }
+  
+  func getImage(for location: String, completionHandler: @escaping (_ image: UIImage) -> Void) {
+    let gsReference = storage.reference(forURL: location)
+    gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+      if let data = data {
+        completionHandler(UIImage(data: data)!)
+      } else {
+        print("Error Occurred: \(error)")
+      }
     }
   }
 }
