@@ -33,6 +33,7 @@ class DetailViewController: ViewController {
 		}
 	}
 	var currentBook: Book!
+	var currentBid: Double!
   
   override func viewWillAppear(_ animated: Bool) {
     DatabaseManager.shared.getImage(for: currentBook.image) { image in
@@ -59,6 +60,8 @@ class DetailViewController: ViewController {
 		let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 		let viewController = mainStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 		viewController.currentBook = book
+		viewController.currentBid = book.bidPrice
+		print(viewController.currentBid)
     
 		return viewController
 	}
