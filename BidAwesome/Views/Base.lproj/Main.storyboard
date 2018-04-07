@@ -318,6 +318,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fn9-qL-2Zd" secondAttribute="height" multiplier="120:23" id="QGy-ip-tBy"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="googleLogin:" destination="crK-Sx-JxI" eventType="valueChanged" id="yWO-nC-9eS"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.24872583149999999" green="0.56455856559999995" blue="0.30188736319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
