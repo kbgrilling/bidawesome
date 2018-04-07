@@ -38,7 +38,7 @@ final class DatabaseManager {
       ])
   }
   
-  func getBooks() -> [Book] {
+  func getBooks(completionHandler: @escaping (_ books: [Book]) -> Void){
     var books = [Book]()
     bookCollection.getDocuments { doc, err in
       for docData in (doc?.documents)! {
@@ -55,8 +55,8 @@ final class DatabaseManager {
           id: docData.documentID)
         books.append(book)
       }
+      completionHandler(books)
     }
-    return books
   }
 }
 

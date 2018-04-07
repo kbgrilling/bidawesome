@@ -1,1 +1,0 @@
-../../../../FirebaseUI/FirebaseUIFrameworks/FirebaseFirestoreUI/Frameworks/FirebaseFirestoreUI.framework/Headers/FirebaseFirestoreUI.h
