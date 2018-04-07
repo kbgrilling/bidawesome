@@ -17,13 +17,6 @@ class ViewController: UIViewController {
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
     title = "BidAwesome"
 	}
-
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
-
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -49,6 +42,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     return CGSize(width: width, height: height)
   }
   
-  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let vc = DetailViewController.instanceFromStoryboard()
+    navigationController?.pushViewController(vc, animated: true)
+  }
 }
 
