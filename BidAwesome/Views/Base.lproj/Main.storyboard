@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -262,9 +257,6 @@
                                     <segment title="Login"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="selectedSegmentDidChange:" destination="crK-Sx-JxI" eventType="valueChanged" id="Kjm-EQ-4Nk"/>
-                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="itY-S9-Kx6">
                                 <rect key="frame" x="50.5" y="233" width="220" height="30"/>
@@ -278,11 +270,39 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bM-qc-bGk">
+                                <rect key="frame" x="141" y="333" width="38" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLoginButton:" destination="crK-Sx-JxI" eventType="touchUpInside" id="Qux-5h-9z0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RWO-Ti-AQG">
+                                <rect key="frame" x="20" y="25" width="30" height="42.5"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="X">
+                                            <attributes>
+                                                <font key="NSFont" size="26" name="HelveticaNeue-Thin"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="didPressDismissButton:" destination="crK-Sx-JxI" eventType="touchUpInside" id="87Y-mx-26J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24872583149999999" green="0.56455856559999995" blue="0.30188736319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Tj4-iV-t8L" firstAttribute="top" secondItem="cgy-AE-KJs" secondAttribute="bottom" constant="35" id="12f-7A-bad"/>
                             <constraint firstItem="itY-S9-Kx6" firstAttribute="width" secondItem="Tj4-iV-t8L" secondAttribute="width" id="3OP-a6-qTJ"/>
+                            <constraint firstItem="RWO-Ti-AQG" firstAttribute="top" secondItem="3iM-X4-CDx" secondAttribute="top" constant="5" id="6j3-yu-06P"/>
+                            <constraint firstItem="1bM-qc-bGk" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="8K4-zG-vW0"/>
+                            <constraint firstItem="1bM-qc-bGk" firstAttribute="top" secondItem="jHA-5G-GfW" secondAttribute="bottom" constant="20" id="GY8-UL-XQu"/>
+                            <constraint firstItem="RWO-Ti-AQG" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="20" id="LjL-Qu-dso"/>
                             <constraint firstItem="cgy-AE-KJs" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="115" id="OvO-zr-HR8"/>
                             <constraint firstItem="jHA-5G-GfW" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="Xpd-td-aqG"/>
                             <constraint firstItem="itY-S9-Kx6" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="aA7-wR-Jcr"/>
@@ -300,6 +320,7 @@
                         <outlet property="emailTextField" destination="itY-S9-Kx6" id="xfp-pB-KTe"/>
                         <outlet property="logoView" destination="cgy-AE-KJs" id="6le-pM-pkR"/>
                         <outlet property="passwordTextField" destination="jHA-5G-GfW" id="svq-lf-rRZ"/>
+                        <outlet property="segmentedControl" destination="Tj4-iV-t8L" id="mQn-nB-t18"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhU-6w-OLU" userLabel="First Responder" sceneMemberID="firstResponder"/>

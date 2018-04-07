@@ -12,27 +12,32 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
   
   @IBOutlet weak var logoView: UIView!
-
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
-  var register = true
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
   
-  @IBAction func selectedSegmentDidChange(_ sender: Any) {
-    register = !register
+  @IBAction func didPressDismissButton(_ sender: UIButton) {
+    self.dismiss(animated: true, completion: nil)
   }
   
-  @IBAction func login(_ sender: Any) {
+  @IBAction func didPressLoginButton(_ sender: UIButton) {
     guard let email = emailTextField.text else { return }
     guard let pwd = passwordTextField.text else { return }
-    if register {
+
+    if segmentedControl.selectedSegmentIndex == 0 {
       Auth.auth().createUser(withEmail: email, password: pwd) { user, err in
         print("\(user?.displayName) Registered Successful")
         self.dismiss(animated: true, completion: nil)
       }
-    } else {
+    } else if segmentedControl.selectedSegmentIndex == 1 {
       Auth.auth().signIn(withEmail: email, password: pwd) { user, err in
         print("\(user?.displayName) Login Successful")
+        self.dismiss(animated: true, completion: nil)
+      }
+    } else {
+      Auth.auth().createUser(withEmail: email, password: pwd) { user, err in
+        print("\(user?.displayName) Registered Successful")
         self.dismiss(animated: true, completion: nil)
       }
     }
