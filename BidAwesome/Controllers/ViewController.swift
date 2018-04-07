@@ -11,14 +11,13 @@ import FirebaseAuth
 
 class ViewController: UIViewController {
   
-  @IBOutlet weak var loginButton: UIBarButtonItem!
-  @IBOutlet weak var collectionView: UICollectionView!
-  
   let dm = DatabaseManager.shared
   var booksArray: [Book] = []
   var bookImages = [UIImage]()
   var indexPathArray = [IndexPath]()
-
+  
+  @IBOutlet weak var loginButton: UIBarButtonItem!
+  @IBOutlet weak var collectionView: UICollectionView!
   
   @IBAction func didPressLoginButton(_ sender: UIBarButtonItem) {
     if sender.title == "Login" {
@@ -27,7 +26,7 @@ class ViewController: UIViewController {
       present(viewController, animated: true, completion: nil)
     } else {
       do {
-      try Auth.auth().signOut()
+        try Auth.auth().signOut()
         loginButton.title = "Login"
       } catch {
         print("Could not log out")
@@ -36,10 +35,10 @@ class ViewController: UIViewController {
   }
   
   override func viewDidLoad() {
-		super.viewDidLoad()
+    super.viewDidLoad()
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
     title = "BidAwesome"
-	}
+  }
   
   override func viewWillAppear(_ animated: Bool) {
     loadBooks()
@@ -67,10 +66,8 @@ class ViewController: UIViewController {
   }
 }
 
-
-
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return booksArray.count
   }
@@ -81,7 +78,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     cell.displayContent()
     
     let currentBook = booksArray[indexPath.row]
-    
     self.dm.getImage(for: currentBook.image) { image in
       cell.imageView.image = image
     }
@@ -90,7 +86,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     cell.titleLabel.text = currentBook.title
     cell.currentBid.text = String(format:"$%.2f", currentBook.bidPrice)
-    
     cell.layer.borderColor = UIColor.lightGray.cgColor
     cell.layer.borderWidth = 1
     
