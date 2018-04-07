@@ -19,6 +19,7 @@ class ViewController: UIViewController {
   var bookImages = [UIImage]()
   var indexPathArray = [IndexPath]()
 
+  var loadingView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
   
   @IBAction func didPressLoginButton(_ sender: UIBarButtonItem) {
     if sender.title == "Login" {
@@ -39,10 +40,18 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
     title = "BidAwesome"
+    
+    //let loadingView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    loadingView.color = .gray
+    loadingView.center = view.center
+    loadingView.hidesWhenStopped = true
+    view.addSubview(loadingView)
+    loadingView.startAnimating()
+    
+    loadBooks()
 	}
   
   override func viewWillAppear(_ animated: Bool) {
-    loadBooks()
   }
   
   func loadBooks() {
@@ -56,6 +65,7 @@ class ViewController: UIViewController {
         }
       }
       self.collectionView.reloadData()
+      self.loadingView.stopAnimating()
     })
     
     let user = Auth.auth().currentUser
