@@ -61,7 +61,7 @@ class DetailViewController: ViewController {
 		let viewController = mainStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 		viewController.currentBook = book
 		viewController.currentBid = book.bidPrice
-		print(viewController.currentBid)
+		
     
 		return viewController
 	}

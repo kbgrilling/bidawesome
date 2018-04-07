@@ -365,9 +365,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNI-cr-bzp">
-                                <rect key="frame" x="113.5" y="260.5" width="93" height="40"/>
+                                <rect key="frame" x="83.5" y="260.5" width="153" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Place Bid">
+                                <state key="normal" title="Increase Bid By">
                                     <color key="titleColor" red="0.24872583149999999" green="0.56455856559999995" blue="0.30188736319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>

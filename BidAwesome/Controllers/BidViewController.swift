@@ -25,7 +25,8 @@ class BidViewController: UIViewController {
 		present(alert, animated: true, completion: nil)
 	} else {
 		print(BidViewController.amountEntered)
-		dm.updateBidPrice(book: currentBook, bidPrice: BidViewController.amountEntered)
+		let newBid = currentBid + BidViewController.amountEntered
+		dm.updateBidPrice(book: currentBook, bidPrice: newBid)
 	}
 	
     self.navigationController?.popViewController(animated: true)
@@ -35,11 +36,13 @@ class BidViewController: UIViewController {
     self.dismiss(animated: true, completion: nil)
   }
 	
+	var currentBid: Double!
 	
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+	let currentBidString = String(format: "%.2f", arguments: [currentBid])
+	currentBidLabel.text = "Current Bid: $\(currentBidString)"
     textView.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
     self.textView.becomeFirstResponder()
   }
@@ -56,6 +59,7 @@ class BidViewController: UIViewController {
     let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
     let viewController = mainStoryboard.instantiateViewController(withIdentifier: "BidViewController") as! BidViewController
     viewController.currentBook = book
+	viewController.currentBid = viewController.currentBook.bidPrice
     
     return viewController
   }
