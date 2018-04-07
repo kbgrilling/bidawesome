@@ -41,10 +41,16 @@ class BidViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+	dm.onBookPriceChanged(bookId: currentBook.id!, onChange: { price in
+		self.currentBidLabel.text = String(format:"$%.2f", price)
+	})
 	let currentBidString = String(format: "%.2f", arguments: [currentBid])
 	currentBidLabel.text = "Current Bid: $\(currentBidString)"
     textView.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
     self.textView.becomeFirstResponder()
+	dm.onBookPriceChanged(bookId: currentBook.id!, onChange: { price in
+		self.currentBidLabel.text = String(format:"$%.2f", price)
+	})
   }
   
   @objc func myTextFieldDidChange(_ textField: UITextField) {
