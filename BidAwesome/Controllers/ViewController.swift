@@ -18,6 +18,11 @@ class ViewController: UIViewController {
 
   var loadingView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
   
+  var runs = 0
+  
+  @IBOutlet weak var loginButton: UIBarButtonItem!
+  @IBOutlet weak var collectionView: UICollectionView!
+  
   @IBAction func didPressLoginButton(_ sender: UIBarButtonItem) {
     if sender.title == "Login" {
       let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -46,7 +51,7 @@ class ViewController: UIViewController {
     loadingView.startAnimating()
     
     loadBooks()
-	}
+  }
   
   override func viewWillAppear(_ animated: Bool) {
   }
@@ -59,6 +64,14 @@ class ViewController: UIViewController {
         self.dm.onBookPriceChanged(bookId: book.id!) { price in
           let cell = self.collectionView.cellForItem(at: self.indexPathArray[index]) as? CollectionViewCell
           cell?.currentBid.text = String(format:"$%.2f", price)
+          
+          if self.runs >= books.count {
+            self.animateBg(cell: cell!)
+          } else {
+            self.runs += 1
+          }
+          
+          
         }
       }
       self.collectionView.reloadData()
@@ -71,6 +84,13 @@ class ViewController: UIViewController {
     } else {
       loginButton.title = "Logout"
     }
+  }
+  
+  func animateBg(cell: CollectionViewCell) {
+    UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.calculationModeLinear], animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: { cell.backgroundColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:0.5) })
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: { cell.backgroundColor = .white })
+    }, completion: nil)
   }
 }
 
