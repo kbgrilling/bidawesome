@@ -18,6 +18,5 @@ class CollectionViewCell: UICollectionViewCell {
     titleLabel.text = ""
     currentBid.text = ""
     imageView.image = UIImage(named: "placeholder")
-    
   }
 }
