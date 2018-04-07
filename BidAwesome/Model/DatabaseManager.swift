@@ -10,7 +10,7 @@ import Firebase
 
 final class DatabaseManager {
   static let shared = DatabaseManager()
-
+  
   private let db = Firestore.firestore()
   
   private let bookCollection: CollectionReference
@@ -19,12 +19,12 @@ final class DatabaseManager {
     bookCollection = db.collection("items")
   }
   
-//  func getItem(for id: String, completionHandler: @escaping (_ doc: DocumentSnapshot?, _ err: Error?) -> Void) {
-//    let item = itemCollection.document(id)
-//    item.getDocument { doc, err in
-//      completionHandler(doc, err)
-//    }
-//  }
+  //  func getItem(for id: String, completionHandler: @escaping (_ doc: DocumentSnapshot?, _ err: Error?) -> Void) {
+  //    let item = itemCollection.document(id)
+  //    item.getDocument { doc, err in
+  //      completionHandler(doc, err)
+  //    }
+  // }
   
   func addBook(for id: String, book: Book) {
     bookCollection.document(id).setData([
@@ -58,5 +58,7 @@ final class DatabaseManager {
     }
     return books
   }
-  
 }
+
+
+
