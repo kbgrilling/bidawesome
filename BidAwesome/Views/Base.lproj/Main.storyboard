@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -312,6 +312,13 @@
                                     <action selector="didPressDismissButton:" destination="crK-Sx-JxI" eventType="touchUpInside" id="87Y-mx-26J"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fn9-qL-2Zd" customClass="GIDSignInButton">
+                                <rect key="frame" x="40" y="371" width="240" height="46"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fn9-qL-2Zd" secondAttribute="height" multiplier="120:23" id="QGy-ip-tBy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.24872583149999999" green="0.56455856559999995" blue="0.30188736319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -323,11 +330,15 @@
                             <constraint firstItem="RWO-Ti-AQG" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="20" id="LjL-Qu-dso"/>
                             <constraint firstItem="cgy-AE-KJs" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="115" id="OvO-zr-HR8"/>
                             <constraint firstItem="1bM-qc-bGk" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="30" id="SXK-BR-unJ"/>
+                            <constraint firstItem="fn9-qL-2Zd" firstAttribute="top" secondItem="1bM-qc-bGk" secondAttribute="bottom" constant="8" id="UYb-ou-UP8"/>
                             <constraint firstItem="jHA-5G-GfW" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="Xpd-td-aqG"/>
+                            <constraint firstItem="fn9-qL-2Zd" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="YSN-N4-A2w"/>
                             <constraint firstItem="itY-S9-Kx6" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="aA7-wR-Jcr"/>
                             <constraint firstItem="Tj4-iV-t8L" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="ajm-38-h3E"/>
                             <constraint firstItem="itY-S9-Kx6" firstAttribute="top" secondItem="Tj4-iV-t8L" secondAttribute="bottom" constant="35" id="h5S-Ou-tsS"/>
+                            <constraint firstItem="fn9-qL-2Zd" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="40" id="k2r-X5-TEz"/>
                             <constraint firstItem="cgy-AE-KJs" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="p5z-R4-FVB"/>
+                            <constraint firstItem="3iM-X4-CDx" firstAttribute="trailing" secondItem="fn9-qL-2Zd" secondAttribute="trailing" constant="40" id="r0f-WQ-ivL"/>
                             <constraint firstItem="cgy-AE-KJs" firstAttribute="top" secondItem="3iM-X4-CDx" secondAttribute="top" constant="25" id="t0h-G8-ajd"/>
                             <constraint firstItem="3iM-X4-CDx" firstAttribute="trailing" secondItem="1bM-qc-bGk" secondAttribute="trailing" constant="30" id="tnZ-su-eAi"/>
                             <constraint firstItem="jHA-5G-GfW" firstAttribute="top" secondItem="itY-S9-Kx6" secondAttribute="bottom" constant="20" id="to2-OF-7ef"/>
@@ -342,11 +353,12 @@
                         <outlet property="logoView" destination="cgy-AE-KJs" id="6le-pM-pkR"/>
                         <outlet property="passwordTextField" destination="jHA-5G-GfW" id="svq-lf-rRZ"/>
                         <outlet property="segmentedControl" destination="Tj4-iV-t8L" id="mQn-nB-t18"/>
+                        <outlet property="signInButton" destination="fn9-qL-2Zd" id="sK8-gC-xys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WhU-6w-OLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="947"/>
+            <point key="canvasLocation" x="971.25" y="946.47887323943667"/>
         </scene>
         <!--Bid View Controller-->
         <scene sceneID="D6e-Ff-Tq0">

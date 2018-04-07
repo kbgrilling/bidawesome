@@ -8,14 +8,15 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
   
   @IBOutlet weak var logoView: UIView!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var loginBtn: UIButton!
-  
+  @IBOutlet weak var signInButton: GIDSignInButton!
   @IBOutlet weak var segmentedControl: UISegmentedControl!
   
   @IBAction func didPressDismissButton(_ sender: UIButton) {
@@ -115,6 +116,10 @@ class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     logoView.layer.cornerRadius = logoView.frame.size.height / 2
+	
+	GIDSignIn.sharedInstance().uiDelegate = self
+	GIDSignIn.sharedInstance().signIn()
+
   }
   
 }
