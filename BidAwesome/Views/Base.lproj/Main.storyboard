@@ -349,7 +349,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$0.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-Xp-yU6">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$1.00" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VfJ-Xp-yU6">
                                 <rect key="frame" x="70" y="120" width="181" height="90.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VfJ-Xp-yU6" secondAttribute="height" multiplier="2:1" id="1RW-4v-zM4"/>

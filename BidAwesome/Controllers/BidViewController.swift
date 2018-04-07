@@ -12,20 +12,30 @@ class BidViewController: UIViewController {
   
   var dm = DatabaseManager.shared
   var currentBook: Book!
-  static var amountEntered: Double!
+  static var amountEntered = 1.00
   
   @IBOutlet weak var textView: UITextField!
 	@IBOutlet weak var currentBidLabel: UILabel!
 	
   @IBAction func didPlaceBid(_ sender: UIButton) {
-    dm.updateBidPrice(book: currentBook, bidPrice: BidViewController.amountEntered)
-    
+	let alert = UIAlertController(title: "Bid To Low", message: "Your bid needs to be at least $1.00 higher than the current bid.", preferredStyle: .alert)
+	let okAction = UIAlertAction(title: "ok", style: .default)
+	alert.addAction(okAction)
+	if BidViewController.amountEntered < 1.00 {
+		present(alert, animated: true, completion: nil)
+	} else {
+		print(BidViewController.amountEntered)
+		dm.updateBidPrice(book: currentBook, bidPrice: BidViewController.amountEntered)
+	}
+	
     self.navigationController?.popViewController(animated: true)
   }
   
   @IBAction func didPressDismissButton(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
   }
+	
+	
   
   override func viewDidLoad() {
     super.viewDidLoad()
