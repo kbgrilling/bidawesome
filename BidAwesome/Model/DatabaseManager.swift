@@ -11,12 +11,15 @@ import Firebase
 final class DatabaseManager {
   static let shared = DatabaseManager()
   
-  private let db = Firestore.firestore()
+  private lazy var db = {
+    Firestore.firestore()
+  }()
   
-  private let bookCollection: CollectionReference
+  private lazy var bookCollection: CollectionReference = {
+    db.collection("items")
+  }()
   
   init() {
-    bookCollection = db.collection("items")
   }
   
   //  func getItem(for id: String, completionHandler: @escaping (_ doc: DocumentSnapshot?, _ err: Error?) -> Void) {
@@ -41,7 +44,8 @@ final class DatabaseManager {
   func getBooks(completionHandler: @escaping (_ books: [Book]) -> Void){
     var books = [Book]()
     bookCollection.getDocuments { doc, err in
-      for docData in (doc?.documents)! {
+      guard let docs = doc?.documents else { completionHandler([]); return }
+      for docData in docs {
         let bookData = docData.data()
         let book = Book(
           title: bookData["title"] as! String,
