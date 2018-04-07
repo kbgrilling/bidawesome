@@ -15,7 +15,8 @@ class BidViewController: UIViewController {
   static var amountEntered: Double!
   
   @IBOutlet weak var textView: UITextField!
-  
+	@IBOutlet weak var currentBidLabel: UILabel!
+	
   @IBAction func didPlaceBid(_ sender: UIButton) {
     dm.updateBidPrice(book: currentBook, bidPrice: BidViewController.amountEntered)
     
