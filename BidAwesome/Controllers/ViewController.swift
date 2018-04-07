@@ -14,6 +14,9 @@ class ViewController: UIViewController {
   let dm = DatabaseManager.shared
   var booksArray: [Book] = []
   
+  var bookImages = [UIImage]()
+  
+  
   override func viewDidLoad() {
 		super.viewDidLoad()
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
       }
       self.collectionView.reloadData()
     })
+    
 	}
 }
 
@@ -39,7 +43,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     cell.displayContent()
     
+    //cell.imageView.image = bookImages[indexPath.row]
+    
     let currentBook = booksArray[indexPath.row]
+    
+    self.dm.getImage(for: currentBook.image) { image in
+      cell.imageView.image = image
+    }
     
     cell.titleLabel.text = currentBook.title
     cell.currentBid.text = String(format:"$%.2f", currentBook.bidPrice)
