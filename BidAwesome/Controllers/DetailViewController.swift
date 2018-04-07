@@ -11,8 +11,6 @@ import Firebase
 
 class DetailViewController: ViewController {
 	
-	
-	
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var bidLabel: UILabel!
@@ -36,9 +34,15 @@ class DetailViewController: ViewController {
 	}
 	var currentBook: Book!
 	
+  
+  override func viewWillAppear(_ animated: Bool) {
+    DatabaseManager.shared.getImage(for: currentBook.image) { image in
+      self.imageView.image = image
+    }
+  }
 	
 	override func viewDidLoad() {
-		imageView.image = UIImage(named: "placeholder")
+		//imageView.image = UIImage(named: "placeholder")
 		titleLabel.text = currentBook.title
 		bidLabel.text = String(format:"$%.2f", currentBook.bidPrice)
 		aboutLabel.text = currentBook.description
@@ -53,6 +57,7 @@ class DetailViewController: ViewController {
 		let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 		let viewController = mainStoryboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 		viewController.currentBook = book
+    
 		return viewController
 	}
 	
