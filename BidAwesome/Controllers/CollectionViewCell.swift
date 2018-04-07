@@ -15,8 +15,8 @@ class CollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var imageView: UIImageView!
   
   func displayContent() {
-    titleLabel.text = "Book Title"
-    currentBid.text = "$35.50"
+    titleLabel.text = ""
+    currentBid.text = ""
     imageView.image = UIImage(named: "placeholder")
     
   }

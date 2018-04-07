@@ -12,7 +12,15 @@ class LoginViewController: UIViewController {
   
   @IBOutlet weak var logoView: UIView!
 
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
+  
+  
   @IBAction func selectedSegmentDidChange(_ sender: Any) {
+  }
+  
+  override func viewDidLoad() {
+    logoView.layer.cornerRadius = logoView.frame.size.height / 2
   }
   
 }
