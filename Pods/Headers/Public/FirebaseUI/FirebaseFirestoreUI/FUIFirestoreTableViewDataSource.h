@@ -1,0 +1,1 @@
+../../../../FirebaseUI/FirebaseUIFrameworks/FirebaseFirestoreUI/Frameworks/FirebaseFirestoreUI.framework/Headers/FUIFirestoreTableViewDataSource.h
