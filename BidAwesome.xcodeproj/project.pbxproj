@@ -20,8 +20,10 @@
 		C3E25B0420784DBC00536030 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25B0320784DBC00536030 /* DetailViewController.swift */; };
 		C3E25B0620785E9000536030 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25B0520785E9000536030 /* LoginViewController.swift */; };
 		C3E25B0C20786A0500536030 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF5C1420785499004B19E4 /* Book.swift */; };
-		C3E25B12207873F700536030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3E25B11207873F700536030 /* GoogleService-Info.plist */; };
 		C3E25B14207879D000536030 /* BidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25B13207879D000536030 /* BidViewController.swift */; };
+		C3E25B192078854C00536030 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E137140207826A500375C57 /* Info.plist */; };
+		C3E25B1A2078856200536030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3E25B1C2078856200536030 /* GoogleService-Info.plist */; };
+		C3E25B1E2078859000536030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3E25B1D2078859000536030 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +43,9 @@
 		C3E25B0120783F1900536030 /* coolstory-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolstory-regular.ttf"; sourceTree = "<group>"; };
 		C3E25B0320784DBC00536030 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C3E25B0520785E9000536030 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C3E25B11207873F700536030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3E25B13207879D000536030 /* BidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidViewController.swift; sourceTree = "<group>"; };
+		C3E25B1B2078856200536030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "Base.lproj/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3E25B1D2078859000536030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9E4163F6AB54B3882EA90D3 /* libPods-BidAwesome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BidAwesome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -61,10 +64,12 @@
 		0E137128207826A500375C57 = {
 			isa = PBXGroup;
 			children = (
+				C3E25B1D2078859000536030 /* GoogleService-Info.plist */,
 				0E137133207826A500375C57 /* BidAwesome */,
 				0E137132207826A500375C57 /* Products */,
 				9EB466B933478C4AA4A057F4 /* Pods */,
 				98607552779CF4D8DDAF9914 /* Frameworks */,
+				C3E25B15207884BE00536030 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +90,7 @@
 				C3E25AFC207830C000536030 /* Views */,
 				C3E25AFE2078318800536030 /* Assets */,
 				0E137140207826A500375C57 /* Info.plist */,
-				C3E25B11207873F700536030 /* GoogleService-Info.plist */,
+				C3E25B1C2078856200536030 /* GoogleService-Info.plist */,
 			);
 			path = BidAwesome;
 			sourceTree = "<group>";
@@ -144,6 +149,14 @@
 				C3E25B0120783F1900536030 /* coolstory-regular.ttf */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		C3E25B15207884BE00536030 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				AFAC4FA220787501007C0E32 /* GoogleService-Info.plist */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +222,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFAC4FA320787501007C0E32 /* GoogleService-Info.plist in Resources */,
+				C3E25B1E2078859000536030 /* GoogleService-Info.plist in Resources */,
 				0E13713F207826A500375C57 /* LaunchScreen.storyboard in Resources */,
 				C3E25B0220783F2700536030 /* coolstory-regular.ttf in Resources */,
-				C3E25B12207873F700536030 /* GoogleService-Info.plist in Resources */,
 				0E13713C207826A500375C57 /* Assets.xcassets in Resources */,
 				0E13713A207826A500375C57 /* Main.storyboard in Resources */,
+				C3E25B1A2078856200536030 /* GoogleService-Info.plist in Resources */,
+				C3E25B192078854C00536030 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +334,15 @@
 				0E13713E207826A500375C57 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C3E25B1C2078856200536030 /* GoogleService-Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3E25B1B2078856200536030 /* Base */,
+			);
+			name = "GoogleService-Info.plist";
+			path = ../../../Downloads;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
