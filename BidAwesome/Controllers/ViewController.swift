@@ -14,25 +14,33 @@ class ViewController: UIViewController {
   let dm = DatabaseManager.shared
   var booksArray: [Book] = []
   
-  var bookImages = [UIImage]()
-  
+  var indexPathArray = [IndexPath]()
   
   override func viewDidLoad() {
 		super.viewDidLoad()
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
     title = "BidAwesome"
+    
+    
+    loadBooks()
 	}
   
   override func viewWillAppear(_ animated: Bool) {
+    //loadBooks()
+  }
+  
+  func loadBooks() {
     booksArray = []
     dm.getBooks(completionHandler: { books in
-      for book in books {
+      for (index, book) in books.enumerated() {
         self.booksArray.append(book)
-        
+        self.dm.onBookPriceChanged(bookId: book.id!) { price in
+          let cell = self.collectionView.cellForItem(at: self.indexPathArray[index]) as? CollectionViewCell
+          cell?.currentBid.text = String(format:"$%.2f", price)
+        }
       }
       self.collectionView.reloadData()
     })
-
   }
 }
 
@@ -56,6 +64,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     self.dm.getImage(for: currentBook.image) { image in
       cell.imageView.image = image
     }
+    
+    indexPathArray.append(indexPath)
     
     cell.titleLabel.text = currentBook.title
     cell.currentBid.text = String(format:"$%.2f", currentBook.bidPrice)
