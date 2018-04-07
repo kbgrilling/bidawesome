@@ -13,6 +13,8 @@
 		0E13713C207826A500375C57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E13713B207826A500375C57 /* Assets.xcassets */; };
 		0E13713F207826A500375C57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E13713D207826A500375C57 /* LaunchScreen.storyboard */; };
 		4C38A22718099917F7B37357 /* libPods-BidAwesome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E4163F6AB54B3882EA90D3 /* libPods-BidAwesome.a */; };
+		C3E25B002078358E00536030 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25AFF2078358E00536030 /* CollectionViewCell.swift */; };
+		C3E25B0220783F2700536030 /* coolstory-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3E25B0120783F1900536030 /* coolstory-regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		0E137140207826A500375C57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B962650C3C2B4497F53F36 /* Pods-BidAwesome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidAwesome.release.xcconfig"; path = "Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome.release.xcconfig"; sourceTree = "<group>"; };
 		A890400888317E32BC578788 /* Pods-BidAwesome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidAwesome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome.debug.xcconfig"; sourceTree = "<group>"; };
+		C3E25AFF2078358E00536030 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C3E25B0120783F1900536030 /* coolstory-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolstory-regular.ttf"; sourceTree = "<group>"; };
 		C9E4163F6AB54B3882EA90D3 /* libPods-BidAwesome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BidAwesome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -62,10 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				0E137134207826A500375C57 /* AppDelegate.swift */,
-				0E137136207826A500375C57 /* ViewController.swift */,
-				0E137138207826A500375C57 /* Main.storyboard */,
-				0E13713B207826A500375C57 /* Assets.xcassets */,
-				0E13713D207826A500375C57 /* LaunchScreen.storyboard */,
+				C3E25AFD207830CE00536030 /* Controllers */,
+				C3E25AFC207830C000536030 /* Views */,
+				C3E25AFE2078318800536030 /* Assets */,
 				0E137140207826A500375C57 /* Info.plist */,
 			);
 			path = BidAwesome;
@@ -86,6 +89,33 @@
 				39B962650C3C2B4497F53F36 /* Pods-BidAwesome.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C3E25AFC207830C000536030 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E137138207826A500375C57 /* Main.storyboard */,
+				0E13713D207826A500375C57 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C3E25AFD207830CE00536030 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3E25AFF2078358E00536030 /* CollectionViewCell.swift */,
+				0E137136207826A500375C57 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C3E25AFE2078318800536030 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0E13713B207826A500375C57 /* Assets.xcassets */,
+				C3E25B0120783F1900536030 /* coolstory-regular.ttf */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E13713F207826A500375C57 /* LaunchScreen.storyboard in Resources */,
+				C3E25B0220783F2700536030 /* coolstory-regular.ttf in Resources */,
 				0E13713C207826A500375C57 /* Assets.xcassets in Resources */,
 				0E13713A207826A500375C57 /* Main.storyboard in Resources */,
 			);
@@ -184,7 +215,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -219,6 +250,7 @@
 			files = (
 				0E137137207826A500375C57 /* ViewController.swift in Sources */,
 				0E137135207826A500375C57 /* AppDelegate.swift in Sources */,
+				C3E25B002078358E00536030 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
