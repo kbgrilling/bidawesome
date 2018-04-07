@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import GoogleSignIn
 
 class ViewController: UIViewController {
   
@@ -79,6 +80,7 @@ class ViewController: UIViewController {
     })
     
     let user = Auth.auth().currentUser
+    
     if user == nil {
       loginButton.title = "Login"
     } else {

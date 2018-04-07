@@ -114,11 +114,15 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }
   }
   
+  @IBAction func googleLogin(_ sender: Any) {
+    GIDSignIn.sharedInstance().signIn()
+  }
+  
   override func viewDidLoad() {
     logoView.layer.cornerRadius = logoView.frame.size.height / 2
 	
 	GIDSignIn.sharedInstance().uiDelegate = self
-	GIDSignIn.sharedInstance().signIn()
+	
 
   }
   
