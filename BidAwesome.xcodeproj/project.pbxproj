@@ -19,6 +19,8 @@
 		C3E25B0420784DBC00536030 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25B0320784DBC00536030 /* DetailViewController.swift */; };
 		C3E25B0620785E9000536030 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25B0520785E9000536030 /* LoginViewController.swift */; };
 		C3E25B0C20786A0500536030 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF5C1420785499004B19E4 /* Book.swift */; };
+		C3E25B12207873F700536030 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3E25B11207873F700536030 /* GoogleService-Info.plist */; };
+		C3E25B14207879D000536030 /* BidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25B13207879D000536030 /* BidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		C3E25B0120783F1900536030 /* coolstory-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolstory-regular.ttf"; sourceTree = "<group>"; };
 		C3E25B0320784DBC00536030 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C3E25B0520785E9000536030 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C3E25B11207873F700536030 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3E25B13207879D000536030 /* BidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidViewController.swift; sourceTree = "<group>"; };
 		C9E4163F6AB54B3882EA90D3 /* libPods-BidAwesome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BidAwesome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,6 +83,7 @@
 				C3E25AFC207830C000536030 /* Views */,
 				C3E25AFE2078318800536030 /* Assets */,
 				0E137140207826A500375C57 /* Info.plist */,
+				C3E25B11207873F700536030 /* GoogleService-Info.plist */,
 			);
 			path = BidAwesome;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				0E137136207826A500375C57 /* ViewController.swift */,
 				C3E25B0320784DBC00536030 /* DetailViewController.swift */,
 				C3E25B0520785E9000536030 /* LoginViewController.swift */,
+				C3E25B13207879D000536030 /* BidViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 			files = (
 				0E13713F207826A500375C57 /* LaunchScreen.storyboard in Resources */,
 				C3E25B0220783F2700536030 /* coolstory-regular.ttf in Resources */,
+				C3E25B12207873F700536030 /* GoogleService-Info.plist in Resources */,
 				0E13713C207826A500375C57 /* Assets.xcassets in Resources */,
 				0E13713A207826A500375C57 /* Main.storyboard in Resources */,
 			);
@@ -235,15 +242,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle,
 				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle,
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -281,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E25B14207879D000536030 /* BidViewController.swift in Sources */,
 				AFBF5C132078517E004B19E4 /* DatabaseManager.swift in Sources */,
 				0E137137207826A500375C57 /* ViewController.swift in Sources */,
 				C3E25B0C20786A0500536030 /* Book.swift in Sources */,

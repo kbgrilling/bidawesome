@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
   
+  var books: [Book] = []
+  
   override func viewDidLoad() {
 		super.viewDidLoad()
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
