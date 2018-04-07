@@ -13,6 +13,9 @@
 		0E13713C207826A500375C57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E13713B207826A500375C57 /* Assets.xcassets */; };
 		0E13713F207826A500375C57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E13713D207826A500375C57 /* LaunchScreen.storyboard */; };
 		4C38A22718099917F7B37357 /* libPods-BidAwesome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E4163F6AB54B3882EA90D3 /* libPods-BidAwesome.a */; };
+		AFBF5C102078515E004B19E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFBF5C0F2078515E004B19E4 /* GoogleService-Info.plist */; };
+		AFBF5C132078517E004B19E4 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF5C122078517E004B19E4 /* DatabaseManager.swift */; };
+		AFBF5C1520785499004B19E4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBF5C1420785499004B19E4 /* Book.swift */; };
 		C3E25B002078358E00536030 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25AFF2078358E00536030 /* CollectionViewCell.swift */; };
 		C3E25B0220783F2700536030 /* coolstory-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3E25B0120783F1900536030 /* coolstory-regular.ttf */; };
 		C3E25B0420784DBC00536030 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E25B0320784DBC00536030 /* DetailViewController.swift */; };
@@ -29,6 +32,9 @@
 		0E137140207826A500375C57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B962650C3C2B4497F53F36 /* Pods-BidAwesome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidAwesome.release.xcconfig"; path = "Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome.release.xcconfig"; sourceTree = "<group>"; };
 		A890400888317E32BC578788 /* Pods-BidAwesome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidAwesome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome.debug.xcconfig"; sourceTree = "<group>"; };
+		AFBF5C0F2078515E004B19E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFBF5C122078517E004B19E4 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		AFBF5C1420785499004B19E4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		C3E25AFF2078358E00536030 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		C3E25B0120783F1900536030 /* coolstory-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolstory-regular.ttf"; sourceTree = "<group>"; };
 		C3E25B0320784DBC00536030 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -69,11 +75,13 @@
 		0E137133207826A500375C57 /* BidAwesome */ = {
 			isa = PBXGroup;
 			children = (
+				AFBF5C1120785174004B19E4 /* Model */,
 				0E137134207826A500375C57 /* AppDelegate.swift */,
 				C3E25AFD207830CE00536030 /* Controllers */,
 				C3E25AFC207830C000536030 /* Views */,
 				C3E25AFE2078318800536030 /* Assets */,
 				0E137140207826A500375C57 /* Info.plist */,
+				AFBF5C0F2078515E004B19E4 /* GoogleService-Info.plist */,
 			);
 			path = BidAwesome;
 			sourceTree = "<group>";
@@ -93,6 +101,15 @@
 				39B962650C3C2B4497F53F36 /* Pods-BidAwesome.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AFBF5C1120785174004B19E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFBF5C122078517E004B19E4 /* DatabaseManager.swift */,
+				AFBF5C1420785499004B19E4 /* Book.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C3E25AFC207830C000536030 /* Views */ = {
@@ -188,6 +205,7 @@
 			files = (
 				0E13713F207826A500375C57 /* LaunchScreen.storyboard in Resources */,
 				C3E25B0220783F2700536030 /* coolstory-regular.ttf in Resources */,
+				AFBF5C102078515E004B19E4 /* GoogleService-Info.plist in Resources */,
 				0E13713C207826A500375C57 /* Assets.xcassets in Resources */,
 				0E13713A207826A500375C57 /* Main.storyboard in Resources */,
 			);
@@ -221,7 +239,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome-resources.sh",
-				$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle,
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/gRPC/gRPCCertificates.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -238,9 +266,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BidAwesome/Pods-BidAwesome-frameworks.sh",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -254,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFBF5C132078517E004B19E4 /* DatabaseManager.swift in Sources */,
 				0E137137207826A500375C57 /* ViewController.swift in Sources */,
 				C3E25B0420784DBC00536030 /* DetailViewController.swift in Sources */,
 				0E137135207826A500375C57 /* AppDelegate.swift in Sources */,
