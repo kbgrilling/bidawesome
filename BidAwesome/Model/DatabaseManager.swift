@@ -39,6 +39,10 @@ final class DatabaseManager {
       ])
   }
   
+  func updateBidPrice(book: Book, bidPrice: Double) {
+    bookCollection.document(book.id!).setData(["bidPrice": bidPrice], options: SetOptions.merge())
+  }
+  
   func getBooks(completionHandler: @escaping (_ books: [Book]) -> Void){
     var books = [Book]()
     bookCollection.getDocuments { doc, err in

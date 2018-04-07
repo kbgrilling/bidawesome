@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -257,6 +262,9 @@
                                     <segment title="Login"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="crK-Sx-JxI" eventType="valueChanged" id="auN-42-e2q"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="itY-S9-Kx6">
                                 <rect key="frame" x="50.5" y="233" width="220" height="30"/>
@@ -271,8 +279,8 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bM-qc-bGk">
-                                <rect key="frame" x="141" y="333" width="38" height="30"/>
-                                <state key="normal" title="Login">
+                                <rect key="frame" x="30" y="333" width="260" height="30"/>
+                                <state key="normal" title="Register">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -304,12 +312,14 @@
                             <constraint firstItem="1bM-qc-bGk" firstAttribute="top" secondItem="jHA-5G-GfW" secondAttribute="bottom" constant="20" id="GY8-UL-XQu"/>
                             <constraint firstItem="RWO-Ti-AQG" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="20" id="LjL-Qu-dso"/>
                             <constraint firstItem="cgy-AE-KJs" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="115" id="OvO-zr-HR8"/>
+                            <constraint firstItem="1bM-qc-bGk" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="30" id="SXK-BR-unJ"/>
                             <constraint firstItem="jHA-5G-GfW" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="Xpd-td-aqG"/>
                             <constraint firstItem="itY-S9-Kx6" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="aA7-wR-Jcr"/>
                             <constraint firstItem="Tj4-iV-t8L" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="ajm-38-h3E"/>
                             <constraint firstItem="itY-S9-Kx6" firstAttribute="top" secondItem="Tj4-iV-t8L" secondAttribute="bottom" constant="35" id="h5S-Ou-tsS"/>
                             <constraint firstItem="cgy-AE-KJs" firstAttribute="centerX" secondItem="JJd-HE-Q1Y" secondAttribute="centerX" id="p5z-R4-FVB"/>
                             <constraint firstItem="cgy-AE-KJs" firstAttribute="top" secondItem="3iM-X4-CDx" secondAttribute="top" constant="25" id="t0h-G8-ajd"/>
+                            <constraint firstItem="3iM-X4-CDx" firstAttribute="trailing" secondItem="1bM-qc-bGk" secondAttribute="trailing" constant="30" id="tnZ-su-eAi"/>
                             <constraint firstItem="jHA-5G-GfW" firstAttribute="top" secondItem="itY-S9-Kx6" secondAttribute="bottom" constant="20" id="to2-OF-7ef"/>
                             <constraint firstItem="Tj4-iV-t8L" firstAttribute="leading" secondItem="3iM-X4-CDx" secondAttribute="leading" constant="50" id="wwM-mC-YSa"/>
                             <constraint firstItem="jHA-5G-GfW" firstAttribute="width" secondItem="itY-S9-Kx6" secondAttribute="width" id="xtY-dQ-iDZ"/>
@@ -318,6 +328,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="itY-S9-Kx6" id="xfp-pB-KTe"/>
+                        <outlet property="loginBtn" destination="1bM-qc-bGk" id="CfC-F3-37U"/>
                         <outlet property="logoView" destination="cgy-AE-KJs" id="6le-pM-pkR"/>
                         <outlet property="passwordTextField" destination="jHA-5G-GfW" id="svq-lf-rRZ"/>
                         <outlet property="segmentedControl" destination="Tj4-iV-t8L" id="mQn-nB-t18"/>

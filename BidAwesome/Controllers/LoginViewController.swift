@@ -14,11 +14,23 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var logoView: UIView!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var loginBtn: UIButton!
   
   @IBOutlet weak var segmentedControl: UISegmentedControl!
   
   @IBAction func didPressDismissButton(_ sender: UIButton) {
     self.dismiss(animated: true, completion: nil)
+  }
+  
+  @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+    switch segmentedControl.selectedSegmentIndex {
+    case 0:
+      loginBtn.titleLabel?.text = "Register"
+    case 1:
+      loginBtn.titleLabel?.text = "Login"
+    default:
+      print("Segmented Control Not at 1 or 2 Somehow")
+    }
   }
   
   @IBAction func didPressLoginButton(_ sender: UIButton) {
