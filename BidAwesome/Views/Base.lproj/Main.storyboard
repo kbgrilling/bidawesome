@@ -143,7 +143,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NZX-sk-Y3K" kind="presentation" id="U2p-8p-3vN"/>
+                                    <action selector="bidButtonWasPressed:" destination="ZC0-P6-LaZ" eventType="touchUpInside" id="YVX-iS-kPm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this book" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBQ-pq-FK5">
@@ -229,7 +229,7 @@
         <!--Login View Controller-->
         <scene sceneID="RXq-oc-IZt">
             <objects>
-                <viewController id="crK-Sx-JxI" customClass="LoginViewController" customModule="BidAwesome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="crK-Sx-JxI" customClass="LoginViewController" customModule="BidAwesome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JJd-HE-Q1Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -330,7 +330,7 @@
         <!--Bid View Controller-->
         <scene sceneID="D6e-Ff-Tq0">
             <objects>
-                <viewController id="NZX-sk-Y3K" customClass="BidViewController" customModule="BidAwesome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BidViewController" id="NZX-sk-Y3K" customClass="BidViewController" customModule="BidAwesome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCp-yc-dsP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
