@@ -47,6 +47,11 @@ class BidViewController: UIViewController {
       self.currentBidLabel.text = "Current Bid: " + String(format:"$%.2f", price)
     })
   }
+	override func viewWillAppear(_ animated: Bool) {
+		dm.onBookPriceChanged(bookId: currentBook.id!, onChange: { price in
+			self.currentBid = price
+		})
+	}
   
   @objc func myTextFieldDidChange(_ textField: UITextField) {
     if let amountString = textField.text?.currencyInputFormatting() {
