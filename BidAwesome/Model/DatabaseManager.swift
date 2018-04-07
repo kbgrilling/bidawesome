@@ -43,6 +43,13 @@ final class DatabaseManager {
     bookCollection.document(book.id!).setData(["bidPrice": bidPrice], options: SetOptions.merge())
   }
   
+  func onBookPriceChanged(bookId: String, onChange: @escaping (Double) -> Void) {
+    bookCollection.document(bookId).addSnapshotListener { snapshot, err in
+      guard let data = snapshot?.data(), let bidPrice = data["bidPrice"] as? Double else { return }
+      onChange(bidPrice)
+    }
+  }
+  
   func getBooks(completionHandler: @escaping (_ books: [Book]) -> Void){
     var books = [Book]()
     bookCollection.getDocuments { doc, err in

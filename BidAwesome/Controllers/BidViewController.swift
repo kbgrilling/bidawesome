@@ -18,6 +18,7 @@ class BidViewController: UIViewController {
   
   @IBAction func didPlaceBid(_ sender: UIButton) {
     dm.updateBidPrice(book: currentBook, bidPrice: BidViewController.amountEntered)
+    
     self.navigationController?.popViewController(animated: true)
   }
   

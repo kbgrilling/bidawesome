@@ -33,7 +33,6 @@ class DetailViewController: ViewController {
 		}
 	}
 	var currentBook: Book!
-	
   
   override func viewWillAppear(_ animated: Bool) {
     DatabaseManager.shared.getImage(for: currentBook.image) { image in
@@ -50,6 +49,9 @@ class DetailViewController: ViewController {
 		languageLabel.text = "Language: \(currentBook.language)"
 		editorLabel.text = "Editor \(currentBook.editor)"
 		
+    dm.onBookPriceChanged(bookId: currentBook.id!, onChange: { price in
+      self.bidLabel.text = String(format:"$%.2f", price)
+    })
 	}
 	
 	// you can pass in your model here
