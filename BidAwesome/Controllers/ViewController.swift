@@ -24,6 +24,7 @@ class ViewController: UIViewController {
 	}
   
   override func viewWillAppear(_ animated: Bool) {
+    booksArray = []
     dm.getBooks(completionHandler: { books in
       for book in books {
         self.booksArray.append(book)
