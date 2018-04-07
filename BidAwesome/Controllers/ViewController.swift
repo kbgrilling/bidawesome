@@ -7,20 +7,40 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
-
+  
+  @IBOutlet weak var loginButton: UIBarButtonItem!
   @IBOutlet weak var collectionView: UICollectionView!
+  
   let dm = DatabaseManager.shared
   var booksArray: [Book] = []
   
   var bookImages = [UIImage]()
+  
+  @IBAction func didPressLoginButton(_ sender: UIBarButtonItem) {
+    if sender.title == "Login" {
+      let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+      let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+      present(viewController, animated: true, completion: nil)
+    } else {
+      do {
+      try Auth.auth().signOut()
+        loginButton.title = "Login"
+      } catch {
+        print("Could not log out")
+      }
+    }
+  }
+  
   
   
   override func viewDidLoad() {
 		super.viewDidLoad()
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
     title = "BidAwesome"
+    
 	}
   
   override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +52,13 @@ class ViewController: UIViewController {
       }
       self.collectionView.reloadData()
     })
-
+    
+    let user = Auth.auth().currentUser
+    if user == nil {
+      loginButton.title = "Login"
+    } else {
+      loginButton.title = "Logout"
+    }
   }
 }
 
@@ -48,8 +74,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
     
     cell.displayContent()
-    
-    //cell.imageView.image = bookImages[indexPath.row]
     
     let currentBook = booksArray[indexPath.row]
     
