@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BidViewController: ViewController {
+class BidViewController: UIViewController {
   
   @IBOutlet weak var textView: UITextField!
   @IBOutlet weak var dismissButton: UIButton!
