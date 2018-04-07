@@ -25,14 +25,7 @@ final class DatabaseManager {
   
   init() {
   }
-  
-  //  func getItem(for id: String, completionHandler: @escaping (_ doc: DocumentSnapshot?, _ err: Error?) -> Void) {
-  //    let item = itemCollection.document(id)
-  //    item.getDocument { doc, err in
-  //      completionHandler(doc, err)
-  //    }
-  // }
-  
+    
   func addBook(for id: String, book: Book) {
     bookCollection.document(id).setData([
       "authors": book.authors,

@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     dm.getBooks(completionHandler: { books in
       for book in books {
         self.booksArray.append(book)
+        
       }
       self.collectionView.reloadData()
     })
