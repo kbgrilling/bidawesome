@@ -10,8 +10,16 @@ import UIKit
 
 class BidViewController: UIViewController {
   
+  var dm = DatabaseManager.shared
+  var currentBook: Book!
+  static var amountEntered: Double!
+  
   @IBOutlet weak var textView: UITextField!
-  @IBOutlet weak var dismissButton: UIButton!
+  
+  @IBAction func didPlaceBid(_ sender: UIButton) {
+    dm.updateBidPrice(book: currentBook, bidPrice: BidViewController.amountEntered)
+    self.navigationController?.popViewController(animated: true)
+  }
   
   @IBAction func didPressDismissButton(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
@@ -29,7 +37,17 @@ class BidViewController: UIViewController {
     if let amountString = textField.text?.currencyInputFormatting() {
       textField.text = amountString
     }
+    
   }
+  
+  static func instanceFromStoryboard(book: Book) -> BidViewController {
+    let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "BidViewController") as! BidViewController
+    viewController.currentBook = book
+    
+    return viewController
+  }
+
 }
 
 extension String {
@@ -47,6 +65,8 @@ extension String {
     biddingAmount = regex.stringByReplacingMatches(in: biddingAmount, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
     let double = (biddingAmount as NSString).doubleValue
     number = NSNumber(value: (double / 100))
+    
+    BidViewController.amountEntered = number as! Double!
     
     return numberFormatter.string(from: number)!
   }

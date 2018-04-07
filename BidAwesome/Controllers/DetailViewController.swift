@@ -24,9 +24,9 @@ class DetailViewController: ViewController {
 		let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
 		if user != nil {
 			print("go to bid page")
-			let viewController = mainStoryboard.instantiateViewController(withIdentifier: "BidViewController") as! BidViewController
-			present(viewController, animated: true, completion: nil)
-		} else {
+      let vc = BidViewController.instanceFromStoryboard(book: currentBook)
+      navigationController?.pushViewController(vc, animated: true)
+    } else {
 			print("go to login page")
 			let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
 			present(viewController, animated: true, completion: nil)

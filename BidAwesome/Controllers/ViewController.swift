@@ -21,7 +21,9 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
     navigationController?.navigationBar.barTintColor = UIColor(red:0.24, green:0.56, blue:0.30, alpha:1.0)
     title = "BidAwesome"
-    
+	}
+  
+  override func viewWillAppear(_ animated: Bool) {
     dm.getBooks(completionHandler: { books in
       for book in books {
         self.booksArray.append(book)
@@ -29,9 +31,11 @@ class ViewController: UIViewController {
       }
       self.collectionView.reloadData()
     })
-    
-	}
+
+  }
 }
+
+
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 

@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eA5-5s-mTV">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -221,6 +216,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PY5-PQ-za2">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -356,7 +359,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Bid: $35.50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Un8-ZM-yHj">
-                                <rect key="frame" x="84" y="50" width="152" height="31"/>
+                                <rect key="frame" x="84" y="50" width="152" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -367,15 +370,8 @@
                                 <state key="normal" title="Place Bid">
                                     <color key="titleColor" red="0.24872583149999999" green="0.56455856559999995" blue="0.30188736319999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWt-yb-amD">
-                                <rect key="frame" x="25" y="40" width="30" height="51"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                                 <connections>
-                                    <action selector="didPressDismissButton:" destination="NZX-sk-Y3K" eventType="touchUpInside" id="CoB-vG-6oD"/>
+                                    <action selector="didPlaceBid:" destination="NZX-sk-Y3K" eventType="touchUpInside" id="AzX-Bg-UN1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -384,18 +380,14 @@
                             <constraint firstItem="VfJ-Xp-yU6" firstAttribute="leading" secondItem="x0Z-6E-hAR" secondAttribute="leading" constant="70" id="2kV-Po-a65"/>
                             <constraint firstItem="Un8-ZM-yHj" firstAttribute="top" secondItem="x0Z-6E-hAR" secondAttribute="top" constant="30" id="8ZF-z5-TUg"/>
                             <constraint firstItem="mNI-cr-bzp" firstAttribute="centerX" secondItem="XCp-yc-dsP" secondAttribute="centerX" id="Bey-bu-MJs"/>
-                            <constraint firstItem="KWt-yb-amD" firstAttribute="leading" secondItem="x0Z-6E-hAR" secondAttribute="leading" constant="25" id="Gjn-aU-ExA"/>
                             <constraint firstItem="Un8-ZM-yHj" firstAttribute="centerX" secondItem="XCp-yc-dsP" secondAttribute="centerX" id="axH-LX-0tT"/>
                             <constraint firstItem="VfJ-Xp-yU6" firstAttribute="centerX" secondItem="XCp-yc-dsP" secondAttribute="centerX" id="btn-z5-f7z"/>
                             <constraint firstItem="mNI-cr-bzp" firstAttribute="top" secondItem="VfJ-Xp-yU6" secondAttribute="bottom" constant="50" id="jyI-YM-xAw"/>
-                            <constraint firstItem="KWt-yb-amD" firstAttribute="top" secondItem="x0Z-6E-hAR" secondAttribute="top" constant="20" id="ncj-Ss-xux"/>
                             <constraint firstItem="VfJ-Xp-yU6" firstAttribute="top" secondItem="x0Z-6E-hAR" secondAttribute="top" constant="100" id="rbF-pr-DWT"/>
-                            <constraint firstItem="KWt-yb-amD" firstAttribute="centerY" secondItem="Un8-ZM-yHj" secondAttribute="centerY" id="scf-9Q-OPu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x0Z-6E-hAR"/>
                     </view>
                     <connections>
-                        <outlet property="dismissButton" destination="KWt-yb-amD" id="u5N-5X-J4C"/>
                         <outlet property="textView" destination="VfJ-Xp-yU6" id="KzM-pI-MPP"/>
                     </connections>
                 </viewController>
